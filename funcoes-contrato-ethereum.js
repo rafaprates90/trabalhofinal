@@ -5,7 +5,8 @@ async function obterDadosDoContrato() {
     try {
       const arrayDadosDoContrato = await smartContract.auditorias(userInput);
       console.log(arrayDadosDoContrato);
-      document.getElementById("nomeDaEmpresa").innerText = arrayDadosDoContrato[0];
+      let showLocator = document.getElementById("nomeDaEmpresa");
+    showLocator.innerText = arrayDadosDoContrato[0];
       document.getElementById("nomeDoEscritorio").innerText = arrayDadosDoContrato[1];
       document.getElementById("periodoDeApuracao").innerText = arrayDadosDoContrato[2];
       document.getElementById("processosAtivos").innerText = arrayDadosDoContrato[3];
@@ -24,7 +25,7 @@ async function obterDadosDoContrato() {
       document.getElementById("valorProvavel").innerText = "";
       document.getElementById("valorTotal").innerText = "";
       contractNumberField.value = 0;
-      alert("Ops! Identificamos um erro ao buscar ao resultado da auditoria de numero: " + userInput);
+      alert("Ops! Identificamos um erro ao buscar o resultado da auditoria de numero: " + userInput);
     }
   }
   
