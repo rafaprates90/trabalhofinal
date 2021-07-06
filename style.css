@@ -1,14 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: rgb(224, 224, 224);
+  color: rgb(250, 216, 245);
   font-family: "Montserrat", "sans-serif";
 }
 
 :root {
-  --bgcolor: #00087e;
-  --accentcolor: #db7f7f;
+  --bgcolor: #1c1c1c;
+  --accentcolor: #a68ad5;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: solid 4px rgb(11, 31, 88);
+  border: solid 4px rgb(250, 216, 245);
 }
 
 .link-tree h1 {
