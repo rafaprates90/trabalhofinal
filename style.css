@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: rgb(250, 216, 245);
+  color: rgb(17, 6, 15);
   font-family: "Montserrat", "sans-serif";
 }
 
 :root {
   --bgcolor: #1c1c1c;
-  --accentcolor: #a68ad5;
+  --accentcolor: #23232e;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: solid 4px rgb(250, 216, 245);
+  border: solid 4px rgb(54, 46, 53);
 }
 
 .link-tree h1 {
