@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo-site.css" />
+    <title>Audichain</title>
+  </head>
+  <body onload="autoLoadOwner()">
+    <header>
+      <nav>
+        <a class="logo" href="/">Audichain</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Registro em Blockchain</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+      <h1>Registre o resultado das auditorias em Blockchain </h1>
+      <br />
+    </header>
+    <section>
+      <form action="#" method="POST" name="frmAuditoria" id="frmAuditoria">
+        <label for="paramNomeDaEmpresa">Nome da Empresa Auditada: </label>
+        <input type="text" name="paramNomeDaEmpresa" id="paramNomeDaEmpresa" size="45" maxlength="42" required autofocus />
+        <br />
+        <label for="paramNomeDoEscritorio">Nome do Escritório responsável pela carteira de processos: </label>
+        <input type="text" name="paramNomeDoEscritorio" id="paramNomeDoEscritorio" size="45" maxlength="42" required />
+        <br />
+        <label for="paramPeriodoDeApuracao">Período de Apuração: </label>
+        <input type="month" name="paramPeriodoDeApuracao" id="paramPeriodoDeApuracao" size="100" required placeholder="(informe o mês de apuração)" />
+        <br />
+        <label for="paramProcessosAtivos">Quantidade de Processos Ativos: </label>
+        <input type="number" name="paramProcessosAtivos" id="paramProcessosAtivos" size="10" min="1" max="99999" required />
+        <br />
+        <label for="paramValorRemoto">Valor Remoto: </label>
+        <input type="number" name="paramValorRemoto" id="paramValorRemoto" size="10" min="1" max="99999" required />
+        <br />
+        <label for="paramValorPossivel">Valor Possível: </label>
+        <input type="number" name="paramValorPossivel" id="paramValorPossivel" size="10" min="1" max="99999" required />
+        <br />
+        <label for="paramValorProvavel">Valor Provável: </label>
+        <input type="number" name="paramValorProvavel" id="paramValorProvavel" size="10" min="1" max="99999" required />
+        <br />
+        <label for="paramValorTotal">Valor Total Contingenciado: </label>
+        <input type="number" name="paramValorTotal" id="paramValorTotal" size="10" min="1" max="99999" required />
+        <br />
+        <input type="submit" value="Registrar a Auditoria no Smart Contract" onclick="event.preventDefault(); saveFormData();" />
+      </form>
+    </section>
+    <hr />
+    <section>
+      <div>
+        <h1>Informações sobre o responsável pela auditoria</h1>
+      </div>
+      <div>
+        <h2>Auditor: <span id="spanOwner"></span></h2>
+      </div>
+      <div>
+        Para pesquisar as auditorias anteriores, informe o numero de registro:
+        <input type="number" name="contractNumber" id="contractNumber" size="10" min="1" max="99999" />
+        <button onclick="obterInformacoesSobreAuditorias()">Buscar Informacoes</button>
+      </div>
+      <br />
+      <div>Nome da Empresa Auditada: <span id="nomeDaEmpresa"></span></div>
+      <div>Nome do Escritório responsável pela carteira de processos: <span id="nomeDoEscritorio"></span></div>
+      <div>Período de Apuração: <span id="periodoDeApuracao"></span></div>
+      <div>Quantidade de Processos Ativos: <span id="processosAtivos"></span></div>
+      <div>Valor Remoto: <span id="valorRemoto"></span></div>
+      <div>Valor Possível: <span id="valorPossivel"></span></div>
+      <div>Valor Provável: <span id="valorProvavel"></span></div>
+      <div>Valor Total: <span id="valorTotal"></span></div>
+    </section>
+    <script
+      type="text/javascript"
+      integrity="sha384-dq8L5gpIcUoGAeHh/6setfxuuDI0ngshPvCvksSAcQMMWCr5cVFAaijT//nxVyjb"
+      crossorigin="anonymous"
+      src="https://cdn-cors.ethers.io/lib/ethers-5.4.0.umd.min.js"
+    ></script>
+    <script src="informacoes-contrato-ethereum.js"></script>
+    <script src="funcoes-contrato-ethereum.js"></script>
+    <script>
+      console.log("Tentando se conectar ao Ethereum via Metamask...");
+      try {
+        const connectionProvider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = connectionProvider.getSigner();
+        //sc = smart contract
+        smartContract = new ethers.Contract(contractAddress, ABI, connectionProvider);
+        smartContractWithSigner = smartContract.connect(signer);
+        console.log("Conectado ao Smart Contract no Ethereum via Metamask.");
+      } catch (err) {
+        console.log("Erro ao conectar ao Ethereum/Smart Contract...");
+        console.error(err);
+      }
+    </script>
+  </body>
+</html>
