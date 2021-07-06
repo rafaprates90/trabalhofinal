@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilo-site.css" />
+        
      <title>Audichain</title>
   </head>
   <body onload="autoLoadOwner()">
@@ -18,16 +19,21 @@
         </div>
         <ul class="nav-list">
           <li><a href="index.html">Início</a></li>
-          <li><a href="#">Sobre</a></li>
+          <li><a href="faq.html">Sobre</a></li>
           <li><a href="registro.html">Registro em Blockchain</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
+      <style>
+        body {
+          background-color: #b8b8b9;
+        }
+        </style>
       <div class="jumbotron text-center bg-primary text-white">
         <h2><i class="fa fa-plus-circle mr-3"></i>Registre o resultado da sua auditoria em Blockchain</h2>
         <br>
     </header>
-    <section>
+    <section class="form-section">
       <form action="#" method="POST" name="frmAuditoria" id="frmAuditoria">
         <label for="paramNomeDaEmpresa">Nome da Empresa Auditada: </label>
         <input type="text" name="paramNomeDaEmpresa" id="paramNomeDaEmpresa" size="45" maxlength="42" required autofocus />
