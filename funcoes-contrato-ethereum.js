@@ -5,14 +5,14 @@ async function obterDadosDoContrato() {
     try {
       const arrayDadosDoContrato = await smartContract.contingencias(userInput);
       console.log(arrayDadosDoContrato);
-      document.getElementById("nomeDaEmpresa").innerText = arrayRentalData[0];
-      document.getElementById("nomeDoEscritorio").innerText = arrayRentalData[1];
-      document.getElementById("periodoDeApuracao").innerText = arrayRentalData[2];
-      document.getElementById("processosAtivos").innerText = arrayRentalData[3];
-      document.getElementById("valorRemoto").innerText = arrayRentalData[4];
-      document.getElementById("valorPossivel").innerText = arrayRentalData[5];
-      document.getElementById("valorProvavel").innerText = arrayRentalData[6];
-      document.getElementById("valorTotal").innerText = arrayRentalData[7];
+      document.getElementById("nomeDaEmpresa").innerText = arrayDadosDoContrato[0];
+      document.getElementById("nomeDoEscritorio").innerText = arrayDadosDoContrato[1];
+      document.getElementById("periodoDeApuracao").innerText = arrayDadosDoContrato[2];
+      document.getElementById("processosAtivos").innerText = arrayDadosDoContrato[3];
+      document.getElementById("valorRemoto").innerText = arrayDadosDoContrato[4];
+      document.getElementById("valorPossivel").innerText = arrayDadosDoContrato[5];
+      document.getElementById("valorProvavel").innerText = arrayDadosDoContrato[6];
+      document.getElementById("valorTotal").innerText = arrayDadosDoContrato[7];
     } catch (err) {
       console.error(err);
       document.getElementById("nomeDaEmpresa").innerText = "";

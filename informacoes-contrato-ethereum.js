@@ -1,4 +1,4 @@
-const contractAddress = "0x8cf94f347418944648e3d66eed4e5c25274914b8";
+const contractAddress = "0x9F8Bb0cEa7Bfd76df97522B3282c0196cfAA6cF3";
 var smartContract;
 var smartContractWithSigner;
 const ABI = [
