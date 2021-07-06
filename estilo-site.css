@@ -29,7 +29,7 @@
   }
   
   main {
-    background-image: url(imagens/bg.jpg) no-repeat center center;
+    background-image: url(bg.jpg) no-repeat center center;
     background-size: cover;
     height: 92vh;
   }

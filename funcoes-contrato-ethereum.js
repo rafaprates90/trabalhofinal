@@ -3,7 +3,7 @@ async function obterDadosDoContrato() {
     const userInput = contractNumberField.value * 1;
     alert("valorInformadoPeloUsuario: " + userInput);
     try {
-      const arrayDadosDoContrato = await smartContract.contingencias(userInput);
+      const arrayDadosDoContrato = await smartContract.auditorias(userInput);
       console.log(arrayDadosDoContrato);
       document.getElementById("nomeDaEmpresa").innerText = arrayDadosDoContrato[0];
       document.getElementById("nomeDoEscritorio").innerText = arrayDadosDoContrato[1];
