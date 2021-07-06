@@ -29,8 +29,10 @@
   }
   
   main {
-    background-image: url(img/bg.jpg) no-repeat center center;
+    background-image: url(img/bg.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position:center center;
     height: 92vh;
   }
   
@@ -108,12 +110,4 @@
   
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
-  }
-
-  body {
-    background-image: url(img/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position:center center;
-    height: 92vh;
   }
